@@ -33,8 +33,8 @@ class LoadCountriesTask {
         this.setState = setState;
         let covidData = await this.getCovidData();
 
-        console.log(covidData);
-        console.log(this.mapCountries);
+        //console.log(covidData);
+        //console.log(this.mapCountries);
 
         for (let i = 0; i < this.mapCountries.length; i++) {
             const mapCountry = this.mapCountries[i];

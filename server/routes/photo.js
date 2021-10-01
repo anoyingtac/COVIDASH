@@ -44,14 +44,14 @@ router.post(
 	authenticate,
 	upload.single('photo'),
 	async (req, res, next) => {
-		console.log(JSON.stringify(req.body));
+		//console.log(JSON.stringify(req.body));
 
 		if (req.file) {
 			let t = await transformImage(req.file.buffer);
 			let uid = await getUserId(req.headers.authtoken);
 			if (uid) {
 				let url = await uploadImage(uid, req.file, t);
-				console.log(url);
+				//console.log(url);
 				res.json({ img: url });
 			} else res.status(500).json({ message: 'No token id found' });
 		} else {

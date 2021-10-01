@@ -26,7 +26,7 @@ router.get('/:id', async(req, res) => {
 
 router.post('/:id', async(req, res) => {//account creation/ login
     const userId = req.params.id;
-    console.log(userId);
+    //console.log(userId);
     try{
         if((typeof userId !== "string") || (userId.length !==28)) throw SyntaxError("userId must be a valid uid");
         user = await userData.createUser(userId);//will return the newly created user

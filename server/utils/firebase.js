@@ -51,10 +51,10 @@ const authenticate = async (req, res, next) => {
 	if (req.headers.authtoken) {
 		try {
 			let r = await admin.auth().verifyIdToken(req.headers.authtoken);
-			console.log(r);
+			//console.log(r);
 			if (r) next();
 		} catch (e) {
-			console.log(e);
+			//console.log(e);
 			res.status(403).json({ message: 'Not authenticated' });
 		}
 	} else res.status(403).json({ message: 'Not authenticated' });
